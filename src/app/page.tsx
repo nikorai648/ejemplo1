@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import FormularioAlumno from "./FormularioAlumno";
 
 export default function Home() {
   return (
@@ -8,8 +9,10 @@ export default function Home() {
     <p
      style={{backgroundColor:'red'}} >
       Come estas</p>
+      <FormularioAlumno></FormularioAlumno>
     <input type="checkbox"
      className="PintarAzul"
+    
     />
     </>
   );
