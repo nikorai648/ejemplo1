@@ -12,6 +12,7 @@ export const FormularioAlumnoFinal=() => {
 
   return (
     <>
+    <h1>Formulario Final</h1>
     <p>Nombre:{alumno.nombre}</p>
     <p>Apellido:{alumno.apellido}</p>
     <p>Edad:{alumno.edad}</p>
@@ -19,16 +20,20 @@ export const FormularioAlumnoFinal=() => {
     <form>
         <label>Nombre</label><br></br>
         <input type='text' placeholder='Ingrese nombre'
-        onClick={(e)=>{setNombre(e.currentTarget.value)}}/><br/>
+              name='nombre'
+        onClick={(e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}/><br/>
         <label>Apellido</label><br></br>
         <input type='text' placeholder='Ingrese Apellido'
-        onClick={(e)=>{setApellido(e.currentTarget.value)}}/><br/>
+              name='apellido'
+        onClick={(e)=>{{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}}/><br/>
         <label>Edad</label><br></br>
         <input type='number' placeholder='Ingrese Edad'
-        onClick={(e)=>{setEdad(e.currentTarget.valueAsNumber)}}/><br/>
+              name='edad'
+        onClick={(e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}/><br/>
         <label>Correo</label><br/>
         <input type='email' placeholder='Ingrese correo'
-        onClick={(e)=>{setCorreo(e.currentTarget.value)}}/><br/>
+              name='correo'
+        onClick={(e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}/><br/>
         <button type='button'>Registrar</button>
     </form>
     </>

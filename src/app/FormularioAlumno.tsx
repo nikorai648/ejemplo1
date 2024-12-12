@@ -8,6 +8,7 @@ export const FormularioAlumno = () => {
     const [correo, setCorreo] = useState("")
   return (
     <>
+    <h1>Formulario inicial</h1>
     <p>Nombre:{nombre}</p>
     <p>Apellido:{apellido}</p>
     <p>Edad:{edad}</p>
