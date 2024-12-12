@@ -21,7 +21,7 @@ export const FormularioAlumno = () => {
         onClick={(e)=>{setApellido(e.currentTarget.value)}}/><br/>
         <label>Edad</label><br></br>
         <input type='number' placeholder='Ingrese Edad'
-        onClick={(e)=>{setEdad(e.currentTarget.value)}}/><br/>
+        onClick={(e)=>{setEdad(e.currentTarget.valueAsNumber)}}/><br/>
         <label>Correo</label><br/>
         <input type='email' placeholder='Ingrese correo'
         onClick={(e)=>{setCorreo(e.currentTarget.value)}}/><br/>
