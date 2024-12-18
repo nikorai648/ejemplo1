@@ -35,6 +35,8 @@ export const TablaAlumnos = () => {
                <tr>
                  <td>{alumno.nombre}</td>
                  <td>{alumno.apellido}</td>
+                 <td>{alumno.edad}</td>
+                 <td>{alumno.correo}</td>
                 </tr>
                 
             )})
