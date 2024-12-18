@@ -1,12 +1,15 @@
 'use client'
 import { obtenerAlumnos } from '@/Firebase/Promesas'
-import React, { useEffect } from 'react'
+import { IAlumno } from '@/Interfaces/IAlumno'
+import React, { useEffect, useState } from 'react'
 
 export const TablaAlumnos = () => {
+    const [IAlumnos, setLAlumnos] = useState<IAlumno[]>([])
     const handleObtenerTodo = ()=>{
         obtenerAlumnos().then(
             (alumnos)=>{
                 console.log(alumnos);
+                setLAlumnos(alumnos);
             }).catch(
                 (e)=>{
                     console.log("Error")
@@ -26,7 +29,17 @@ export const TablaAlumnos = () => {
                 <th>Correo</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            {
+             IAlumnos.map((alumno)=>{return (
+               <tr>
+                 <td>{alumno.nombre}</td>
+                 <td>{alumno.apellido}</td>
+                </tr>
+                
+            )})
+            }
+        </tbody>
     </table>
 
     </>
