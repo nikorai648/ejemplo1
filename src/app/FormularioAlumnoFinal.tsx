@@ -1,4 +1,5 @@
 'use client'
+import { registrarAlumno } from '@/Firebase/Promesas'
 import { iSAlumno } from '@/InitialStates/ISAlumno'
 import React, { useState } from 'react'
 
@@ -13,6 +14,13 @@ export const FormularioAlumnoFinal=() => {
       console.log("le diste al boton")
       alert("Vas a registrar")
       console.log(alumno)
+      registrarAlumno(alumno).then(()=>{
+            //then es para hacer algo si la promesa se cumple
+            alert("Se registro")
+      }).catch((e)=>{
+            //catch si la promesa falla
+            alert("Algo fallo")
+      })
     
     }
 
