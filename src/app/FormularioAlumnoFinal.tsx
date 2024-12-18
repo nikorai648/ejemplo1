@@ -9,6 +9,12 @@ export const FormularioAlumnoFinal=() => {
         setAlumno({...alumno,[estado]:valor})
         }
     }
+    const handleRegistrar = ()=>{
+      console.log("le diste al boton")
+      alert("Vas a registrar")
+      console.log(alumno)
+    
+    }
 
   return (
     <>
