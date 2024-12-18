@@ -34,7 +34,8 @@ export const FormularioAlumnoFinal=() => {
         <input type='email' placeholder='Ingrese correo'
               name='correo'
         onClick={(e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}/><br/>
-        <button type='button'>Registrar</button>
+        <button type='button'
+        onClick={handleRegistrar}>Registrar</button>
     </form>
     </>
   )
