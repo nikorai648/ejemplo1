@@ -1,6 +1,20 @@
-import React from 'react'
+'use client'
+import { obtenerAlumnos } from '@/Firebase/Promesas'
+import React, { useEffect } from 'react'
 
 export const TablaAlumnos = () => {
+    const handleObtenerTodo = ()=>{
+        obtenerAlumnos().then(
+            (alumnos)=>{
+                console.log(alumnos);
+            }).catch(
+                (e)=>{
+                    console.log("Error")
+                })
+    }
+    useEffect(()=>{
+        handleObtenerTodo();
+    },[])
   return (
     <>
     <table>
