@@ -2,6 +2,8 @@
 import { registrarAlumno } from '@/Firebase/Promesas'
 import { iSAlumno } from '@/InitialStates/ISAlumno'
 import React, { useState } from 'react'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export const FormularioAlumnoFinal=() => {
     const[alumno,setAlumno] = useState(iSAlumno)
@@ -31,26 +33,41 @@ export const FormularioAlumnoFinal=() => {
     <p>Apellido:{alumno.apellido}</p>
     <p>Edad:{alumno.edad}</p>
     <p>Correo:{alumno.correo}</p>
-    <form>
-        <label>Nombre</label><br></br>
-        <input type='text' placeholder='Ingrese nombre'
-              name='nombre'
-        onClick={(e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}/><br/>
-        <label>Apellido</label><br></br>
-        <input type='text' placeholder='Ingrese Apellido'
-              name='apellido'
-        onClick={(e)=>{{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}}/><br/>
-        <label>Edad</label><br></br>
-        <input type='number' placeholder='Ingrese Edad'
-              name='edad'
-        onClick={(e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}/><br/>
-        <label>Correo</label><br/>
-        <input type='email' placeholder='Ingrese correo'
-              name='correo'
-        onClick={(e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)}}/><br/>
-        <button type='button'
-        onClick={handleRegistrar}>Registrar</button>
-    </form>
+    <Form>
+    <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Nombre</Form.Label>
+        <Form.Control type="email" placeholder="Ingrese un nombre"
+        name='nombre'
+        onChange={((e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)})}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Apellido</Form.Label>
+        <Form.Control type="email" placeholder="Ingrese un apellido"
+        name='nombre'
+        onChange={((e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)})}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Edad</Form.Label>
+        <Form.Control type="email" placeholder="Ingrese una edad"
+        name='nombre'
+        onChange={((e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)})}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Correo</Form.Label>
+        <Form.Control type="email" placeholder="Ingrese un correo"
+        name='nombre'
+        onChange={((e)=>{handleAlumno(e.currentTarget.name,e.currentTarget.value)})}
+        />
+      </Form.Group>
+
+        <Button variant="primary" type="submit">Registrar</Button>
+    </Form>
     </>
   )
 }
